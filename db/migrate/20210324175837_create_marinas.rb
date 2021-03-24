@@ -7,6 +7,8 @@ class CreateMarinas < ActiveRecord::Migration[5.2]
       t.boolean :has_boat_ramp
       t.integer :low_tide_depth
       t.integer :high_tide_depth
+
+      t.timestamp
     end
   end
 end
