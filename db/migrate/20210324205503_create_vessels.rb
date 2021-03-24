@@ -5,8 +5,6 @@ class CreateVessels < ActiveRecord::Migration[5.2]
       t.string :make
       t.integer :length_overall
       t.boolean :mast_up
-
-      t.timestamp
     end
   end
 end
