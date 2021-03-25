@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_205503) do
 
+ActiveRecord::Schema.define(version: 2021_03_24_205503) do
+  
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "airlines", force: :cascade do |t|
+    t.string "name"
+    t.integer "fleet_size"
+    t.boolean "is_mainline_passenger"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "marinas", force: :cascade do |t|
     t.string "name"

@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   get '/marinas', to: 'marinas#index'
 
   get '/vessels', to: 'vessels#index'
+
+  get '/airlines', to: 'airlines#index'
+
 end
