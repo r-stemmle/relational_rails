@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_03_25_024955) do
 
   # These are extensions that must be enabled in order to support this database
@@ -34,6 +35,16 @@ ActiveRecord::Schema.define(version: 2021_03_25_024955) do
     t.datetime "updated_at"
   end
 
+  create_table "pilots", force: :cascade do |t|
+    t.string "name"
+    t.boolean "is_captain"
+    t.integer "years_experience"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.bigint "airline_id"
+    t.index ["airline_id"], name: "index_pilots_on_airline_id"
+  end
+
   create_table "vessels", force: :cascade do |t|
     t.string "name"
     t.string "make"
@@ -46,4 +57,6 @@ ActiveRecord::Schema.define(version: 2021_03_25_024955) do
   end
 
   add_foreign_key "vessels", "marinas"
+  add_foreign_key "pilots", "airlines"
+
 end
