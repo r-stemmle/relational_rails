@@ -1,5 +1,5 @@
 <h1>Vessels</h1>
 
 <% @vessels.each do |vessel| %>
-  <h2><%= vessel.name %></h2>
+  <h2><a href="/vessels/<%= vessel.id %>"><%= vessel.name %></a></h2>
 <% end %>
