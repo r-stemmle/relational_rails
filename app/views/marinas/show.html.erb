@@ -1,0 +1,11 @@
+<a href="/marinas">All Marinas</a>
+
+<h1><%= @marina.name %></h1>
+<p>Marina id: <%= @marina.id %></p>
+<p><%= @marina.city %>,
+<%= @marina.state %></p>
+<p>Has a boat ramp?  <%= @marina.has_boat_ramp %></p>
+<p>Depth at low tide:  <%= @marina.low_tide_depth %></p>
+<p>Depth at high tide:  <%= @marina.high_tide_depth %></p>
+<p>Created: <%= @marina.created_at %></p>
+<p>Updated: <%= @marina.updated_at %></p>

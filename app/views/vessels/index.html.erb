@@ -2,4 +2,10 @@
 
 <% @vessels.each do |vessel| %>
   <h2><a href="/vessels/<%= vessel.id %>"><%= vessel.name %></a></h2>
+  <p>
+    <%= vessel.make %> <%= vessel.length_overall %> with <%= vessel.mast_text %>,
+    belonging to Marina # <%= vessel.marina_id %> --
+    Created at: <%= vessel.created_at %> and updated at: <%= vessel.updated_at %>
+
+  </p>
 <% end %>
