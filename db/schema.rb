@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_204957) do
 
+ActiveRecord::Schema.define(version: 2021_03_24_205503) do
+  
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +31,13 @@ ActiveRecord::Schema.define(version: 2021_03_24_204957) do
     t.boolean "has_boat_ramp"
     t.integer "low_tide_depth"
     t.integer "high_tide_depth"
+  end
+
+  create_table "vessels", force: :cascade do |t|
+    t.string "name"
+    t.string "make"
+    t.integer "length_overall"
+    t.boolean "mast_up"
   end
 
 end
