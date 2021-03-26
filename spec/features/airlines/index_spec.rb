@@ -27,7 +27,6 @@ RSpec.describe 'airline story 2: parent show', type: :feature do
     
     
     visit "/airlines/#{airline_1.id}"
-    save_and_open_page
     expect(page).to have_content(airline_1.name)
     expect(page).to have_content(airline_1.fleet_size)
     expect(page).to have_content(airline_1.is_mainline_passenger)
@@ -35,7 +34,6 @@ RSpec.describe 'airline story 2: parent show', type: :feature do
     expect(page).to have_content(airline_1.updated_at)
 
     visit "/airlines/#{airline_2.id}"
-    save_and_open_page
     expect(page).to have_content(airline_2.name)
     expect(page).to have_content(airline_2.fleet_size)
     expect(page).to have_content(airline_2.is_mainline_passenger)

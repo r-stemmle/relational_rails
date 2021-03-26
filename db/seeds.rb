@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Marina.destroy_all
 Vessel.destroy_all
-Airline.destroy_all
+Marina.destroy_all
 Pilot.destroy_all
+Airline.destroy_all
 
 alaska_airlines = Airline.create!(
     name: 'Alaska Airlines',
