@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get '/vessels/:id', to: 'vessels#show'
 
   get '/airlines', to: 'airlines#index'
+  get '/airlines/:id', to: 'airlines#show'
 
   get '/pilots', to: 'pilots#index'
-  get '/airlines/:id', to: 'airlines#show'
+  get '/pilots/:id', to: 'pilots#show'
 end
