@@ -5,8 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Marina.destroy_all
 Vessel.destroy_all
+Marina.destroy_all
+Pilot.destroy_all
 Airline.destroy_all
 
 alaska_airlines = Airline.create!(
@@ -41,4 +42,34 @@ smbs.vessels.create!(
     make: 'Brewer',
     length_overall: 44,
     mast_up: true
+)
+
+l_lewis = alaska_airlines.pilots.create!(
+    name: "Lionel Lewis",
+    is_captain: true,
+    years_experience: 26
+)
+
+b_horton = alaska_airlines.pilots.create!(
+    name: "Brian Horton",
+    is_captain: true,
+    years_experience: 18
+)
+
+k_scott = alaska_airlines.pilots.create!(
+    name: "Kim Scott",
+    is_captain: false,
+    years_experience: 20
+)
+
+e_nortey = fedex.pilots.create!(
+    name: "Ernest Nortey",
+    is_captain: false,
+    years_experience: 21
+)
+
+m_jones = fedex.pilots.create!(
+    name:"Matt Jones",
+    is_captain: false,
+    years_experience: 10
 )
