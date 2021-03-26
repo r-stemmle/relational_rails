@@ -58,5 +58,4 @@ ActiveRecord::Schema.define(version: 2021_03_25_024955) do
 
   add_foreign_key "vessels", "marinas"
   add_foreign_key "pilots", "airlines"
-
 end
