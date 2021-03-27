@@ -6,4 +6,10 @@ class MarinasController < ApplicationController
   def show
     @marina = Marina.find(params[:id])
   end
+
+  def show_vessels
+    @marina = Marina.find(params[:id])
+    @vessels = @marina.vessels
+    render template: 'vessels/index'
+  end
 end

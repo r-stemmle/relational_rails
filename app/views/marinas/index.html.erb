@@ -1,5 +1,5 @@
 <h1>Marinas</h1>
 
 <% @marinas.each do |marina| %>
-  <h2><%= marina.name %></h2>
+  <h2><%= link_to "#{marina.name}", controller: "marinas", action: "show", id: marina %></h2>
 <% end %>

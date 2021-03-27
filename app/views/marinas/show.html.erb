@@ -1,6 +1,6 @@
-<a href="/marinas">All Marinas</a>
+<%= link_to "All Marinas", marinas_path %>
 
-<h1><%= @marina.name %></h1>
+<h1><%= link_to "#{@marina.name}", controller: "marinas", action: "show_vessels", id: @marina.id %></h1>
 <p>Marina id: <%= @marina.id %></p>
 <p><%= @marina.city %>,
 <%= @marina.state %></p>
