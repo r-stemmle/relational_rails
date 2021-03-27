@@ -27,7 +27,17 @@ smbs = Marina.create!(
     state: 'GA',
     has_boat_ramp: false,
     low_tide_depth: 3,
-    high_tide_depth: 9
+    high_tide_depth: 9,
+    created_at: "2021-03-21 17:35:00"
+    )
+
+tmh = Marina.create!(
+    name: 'Three Mile Harbor',
+    city: 'Springs',
+    state: 'NY',
+    has_boat_ramp: true,
+    low_tide_depth: 6,
+    high_tide_depth: 10
     )
 
 smbs.vessels.create!(

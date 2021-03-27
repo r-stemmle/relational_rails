@@ -1,6 +1,6 @@
 class MarinasController < ApplicationController
   def index
-    @marinas = Marina.all
+    @marinas = Marina.order("created_at DESC")
   end
 
   def show
