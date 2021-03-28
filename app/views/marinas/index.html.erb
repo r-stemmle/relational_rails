@@ -1,5 +1,9 @@
+<%= link_to "All Marinas", marinas_path %>
+<%= link_to "All Vessels", vessels_path %>
+
 <h1>Marinas</h1>
 
 <% @marinas.each do |marina| %>
-  <h2><%= marina.name %></h2>
+  <h2><%= link_to "#{marina.name}", controller: "marinas", action: "show", id: marina %></h2>
+  <h5>Created at:  <%= marina.created_at %></h5>
 <% end %>

@@ -1,7 +1,11 @@
+<%= link_to "All Marinas", marinas_path %>
+<%= link_to "All Vessels", vessels_path %>
+
 <h1>Vessels</h1>
 
 <% @vessels.each do |vessel| %>
-  <h2><a href="/vessels/<%= vessel.id %>"><%= vessel.name %></a></h2>
+
+  <%= link_to "#{vessel.name}", controller: "vessels", action: "show", id:vessel %>
   <p>
     <%= vessel.make %> <%= vessel.length_overall %> with <%= vessel.mast_text %>,
     belonging to Marina # <%= vessel.marina_id %> --
