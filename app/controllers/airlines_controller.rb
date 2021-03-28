@@ -6,8 +6,4 @@ class AirlinesController < ApplicationController
   def show
     @airline = Airline.find(params[:id])
    end
-
-   def show_pilots
-    @pilots = Pilot.where(:airline_id => params[:id])
-   end
 end

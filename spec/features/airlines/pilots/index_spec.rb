@@ -36,14 +36,26 @@ RSpec.describe 'airline story 5: child attributes shown at parent id', type: :fe
     )
 
   visit "/airlines/#{alaska_airlines.id}/pilots"
-  
+  save_and_open_page
+  expect(page).to have_content(l_lewis.name)
+  expect(page).to have_content(l_lewis.is_captain)
+  expect(page).to have_content(l_lewis.years_experience)
+  expect(page).to have_content(b_horton.name)
+  expect(page).to have_content(b_horton.is_captain)
+  expect(page).to have_content(b_horton.years_experience)
+  expect(page).to have_content(k_scott.name)
+  expect(page).to have_content(k_scott.is_captain)
+  expect(page).to have_content(k_scott.years_experience)
+
   visit "/airlines/#{fedex.id}/pilots"
-  require 'pry'; binding.pry
-  expect(page).to have_content(fedex.pilots.name)
-  expect(page).to have_content(fedex.pilots.fleet_size)
-  expect(page).to have_content(fedex.pilots.is_mainline_passenger)
-  expect(page).to have_content(fedex.pilots.created_at)
-  expect(page).to have_content(fedex.pilots.updated_at)
+  save_and_open_page
+  expect(page).to have_content(m_jones.name)
+  expect(page).to have_content(m_jones.is_captain)
+  expect(page).to have_content(m_jones.years_experience)
+  expect(page).to have_content(e_nortey.name)
+  expect(page).to have_content(e_nortey.is_captain)
+  expect(page).to have_content(e_nortey.years_experience)
+  
 
   end
 end

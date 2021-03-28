@@ -1,6 +1,6 @@
-<h1>Airline Pilot Records</h1>
+<h1><%=@airline.name%> Pilot Records</h1>
 
-<% @pilots.each do |pilot| %>
+<% @airline.pilots.each do |pilot| %>
   <h2>Pilot Name:<%=pilot.name%></h2>
   <h2>Is A Captain:<%=pilot.is_captain%></h2>
   <h2>Years Of Experience:<%=pilot.years_experience%></h2>
