@@ -1,6 +1,6 @@
 class AirlinesController < ApplicationController
   def index
-    @airlines = Airline.all
+    @airlines = Airline.order(created_at: :desc)
   end
 
   def show
