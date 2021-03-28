@@ -4,6 +4,6 @@ class AirlinesController < ApplicationController
   end
 
   def show
-    @airline_obj = Airline.find(params[:id])
+    @airline = Airline.find(params[:id])
    end
 end

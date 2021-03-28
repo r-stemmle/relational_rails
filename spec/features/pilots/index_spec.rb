@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'show pilot attributes', type: :feature do
+RSpec.describe 'pilot story 3: show pilot attributes', type: :feature do
   it 'can see each pilot and it\'s attributes' do
     alaska_airlines = Airline.create!(
       name: 'Alaska Airlines',
@@ -37,7 +37,7 @@ RSpec.describe 'show pilot attributes', type: :feature do
   end
 end
 
-RSpec.describe 'show individual pilot attributes', type: :feature do
+RSpec.describe 'pilot story 4: show individual pilot attributes', type: :feature do
   it 'can display all of the attributes of a specified pilot' do
      alaska_airlines = Airline.create!(
       name: 'Alaska Airlines',

@@ -4,6 +4,6 @@ class PilotsController < ApplicationController
   end
 
   def show
-    @pilots_obj = Pilot.find(params[:id])
+    @pilot = Pilot.find(params[:id])
   end
 end
