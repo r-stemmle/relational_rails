@@ -37,5 +37,22 @@ RSpec.describe "As a visitor" do
     end
   end
 
+#User Story 9, Parent Index Link
+# As a visitor
+# When I visit any page on the site
+# Then I see a link at the top of the page that takes me to the Parent Index
+  describe "When I visit any page on the site" do
+    it "has a link to the parent index" do
 
+    end
+  end
+
+# User Story 10, Parent Child Index Link
+# As a visitor
+# When I visit a parent show page ('/parents/:id')
+# Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
+  describe "When I visit a marina page" do
+    it "has a link to take me to that marinas vessels page" do
+    end
+  end
 end
