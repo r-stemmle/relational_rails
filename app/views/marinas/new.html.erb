@@ -1,0 +1,22 @@
+
+
+
+<form class="new_marina" action="/marinas" method="post">
+    <label for="marina_name">Marina Name:</label>
+    <input type="text" name="marina[name]" value=""><br>
+    <label for="marina_city">Marina City:</label>
+    <input type="text" name="marina[city]" value=""><br>
+    <label for="marina_state">Marina State(eg. "FL"):</label>
+    <input type="text" name="marina[state]" value=""><br>
+    <label for="marina_has_boat_ramp">Boat Ramp?</label>
+    <select class="" name="marina[has_boat_ramp]">
+      <option value="false">false</option>
+      <option value="true">true</option>
+    </select><br>
+    <label for="marina_low_tide_depth">Low Tide Depth:</label>
+    <input type="number" name="marina[low_tide_depth]" value=""><br>
+    <label for="marina_high_tide_depth">High Tide Depth:</label>
+    <input type="number" name="marina[high_tide_depth]" value=""><br>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <button type="submit" name="button">Create Marina</button>
+</form>

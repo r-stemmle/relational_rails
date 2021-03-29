@@ -3,6 +3,8 @@
 
 <h1>Marinas</h1>
 
+<h2><%= link_to "Create New Marina", marinas_new_path %> </h2>
+
 <% @marinas.each do |marina| %>
   <h2><%= link_to "#{marina.name}", controller: "marinas", action: "show", id: marina %></h2>
   <h5>Created at:  <%= marina.created_at %></h5>

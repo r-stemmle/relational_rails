@@ -1,12 +1,19 @@
 require 'rails_helper'
 
-# User Story 6, Parent Index sorted by Most Recently Created (x2)
-# As a visitor
-# When I visit the parent index,
-# I see that records are ordered by most recently created first
-# And next to each of the records I see when it was created
-RSpec.describe "As a visitor" do
 
+RSpec.describe "As a visitor" do
+#   User Story 5, Parent Children Index (x2)
+#
+# As a visitor
+# When I visit '/parents/:parent_id/child_table_name'
+# Then I see each Child that is associated with that Parent with each Child's attributes:
+
+
+  # User Story 6, Parent Index sorted by Most Recently Created (x2)
+  # As a visitor
+  # When I visit the parent index,
+  # I see that records are ordered by most recently created first
+  # And next to each of the records I see when it was created
   describe "When I visit the marina index" do
     it "orders marinas by recently created first and shows created_at" do
       smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
@@ -55,4 +62,6 @@ RSpec.describe "As a visitor" do
     it "has a link to take me to that marinas vessels page" do
     end
   end
+
+
 end
