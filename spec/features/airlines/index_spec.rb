@@ -30,15 +30,15 @@ RSpec.describe 'airline story 2: parent show', type: :feature do
     expect(page).to have_content(alaska_airlines.name)
     expect(page).to have_content(alaska_airlines.fleet_size)
     expect(page).to have_content(alaska_airlines.is_mainline_passenger)
-    expect(page).to have_content(alaska_airlines.created_at)
-    expect(page).to have_content(alaska_airlines.updated_at)
+    expect(page).to have_content(alaska_airlines.created_at.strftime("%m/%d/%Y %I:%M %p"))
+    expect(page).to have_content(alaska_airlines.updated_at.strftime("%m/%d/%Y %I:%M %p"))
 
     visit "/airlines/#{fedex.id}"
     expect(page).to have_content(fedex.name)
     expect(page).to have_content(fedex.fleet_size)
     expect(page).to have_content(fedex.is_mainline_passenger)
-    expect(page).to have_content(fedex.created_at)
-    expect(page).to have_content(fedex.updated_at)
+    expect(page).to have_content(fedex.created_at.strftime("%m/%d/%Y %I:%M %p"))
+    expect(page).to have_content(fedex.updated_at.strftime("%m/%d/%Y %I:%M %p"))
     end
   end
     
