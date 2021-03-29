@@ -39,7 +39,26 @@ RSpec.describe 'airline story 2: parent show', type: :feature do
     expect(page).to have_content(fedex.is_mainline_passenger)
     expect(page).to have_content(fedex.created_at)
     expect(page).to have_content(fedex.updated_at)
+    end
+  end
     
+  RSpec.describe 'airline story 6: airline index sorted', type: :feature do
+    it 'can list and display the airlines by their created_at timestamp' do
+    alaska_airlines = Airline.create!(name: 'Alaska Airlines',
+                                      fleet_size: 83,
+                                      is_mainline_passenger: true
+                                      )
+    fedex = Airline.create!(name: 'Fedex',
+                            fleet_size: 124,
+                            is_mainline_passenger: false
+                            )
+                            
+    alaska_airlines.created_at = "2021-03-27 11:00:00"
+    alaska_airlines.save
+    fedex.created_at = "2020-02-27 1:00:00"                        
+    fedex.save
+    visit "/airlines"
+    expect(page.body).to match(/Alaska Airlines.*Fedex/m)
   end
 end
 
