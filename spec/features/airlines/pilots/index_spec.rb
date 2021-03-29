@@ -36,7 +36,6 @@ RSpec.describe 'airline story 5: child attributes shown at parent id', type: :fe
     )
 
   visit "/airlines/#{alaska_airlines.id}/pilots"
-  save_and_open_page
   expect(page).to have_content(l_lewis.name)
   expect(page).to have_content(l_lewis.is_captain)
   expect(page).to have_content(l_lewis.years_experience)
@@ -48,7 +47,6 @@ RSpec.describe 'airline story 5: child attributes shown at parent id', type: :fe
   expect(page).to have_content(k_scott.years_experience)
 
   visit "/airlines/#{fedex.id}/pilots"
-  save_and_open_page
   expect(page).to have_content(m_jones.name)
   expect(page).to have_content(m_jones.is_captain)
   expect(page).to have_content(m_jones.years_experience)
