@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get '/marinas/:id/vessels', to: 'marinas#show_vessels'
 
   get '/vessels', to: 'vessels#index'
+  get '/vessels/new', to: 'vessels#new'
   get '/vessels/:id', to: 'vessels#show'
+  post '/vessels', to: 'vessels#create'
 
   get '/airlines', to: 'airlines#index'
   get '/airlines/:id', to: 'airlines#show'

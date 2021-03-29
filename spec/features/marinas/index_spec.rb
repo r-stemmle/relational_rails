@@ -21,6 +21,7 @@ RSpec.describe "As a visitor" do
 
       visit '/marinas'
 
+      # expect(page.body).to match(/smbs.*tmh/m)
       expect(page).to have_content(smbs.name)
       expect(page).to have_content(smbs.created_at)
       expect(page).to have_content(tmh.name)

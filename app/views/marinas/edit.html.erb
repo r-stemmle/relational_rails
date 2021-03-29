@@ -1,6 +1,6 @@
-<form action="/marinas/<%= @marina.id %>" method="post">
+<form action="/marinas/<%= @marina.id %>" method="patch">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="put" />
+  <input type="hidden" name="_method" value="patch" />
   <p>Edit</p>
   <input type="text" name="marina[name]" value="<%= @marina.name %>" /><br>
   <input name="marina[city]" value="<%= @marina.city %>" /><br>
