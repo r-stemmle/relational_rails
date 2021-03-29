@@ -1,7 +1,7 @@
 require 'rails_helper'
 require './app/models/airline.rb'
 
-RSpec.describe 'airline story 5: child attributes shown at parent id', type: :feature do
+RSpec.describe 'airline story 5: pilot attributes shown at parent id', type: :feature do
   it 'can show the pilots and their attributes that are associated with individual airlines' do
     alaska_airlines = Airline.create!(name: 'Alaska Airlines',
                                       fleet_size: 83,
