@@ -3,3 +3,5 @@
 <% @airlines.each do |airline| %>
   <h2>Airline Name:<%=airline.name%>, Created At:<%=airline.created_at.strftime("%m/%d/%Y %I:%M %p")%> </h2>
 <% end %>
+
+<%= link_to 'New Airline', '/airlines/new'%>

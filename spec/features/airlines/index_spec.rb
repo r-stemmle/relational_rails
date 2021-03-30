@@ -59,6 +59,7 @@ RSpec.describe 'airline story 2: parent show', type: :feature do
     fedex.save
     visit "/airlines"
     expect(page.body).to match(/Alaska Airlines.*Fedex/m)
+    # 
   end
 end
 

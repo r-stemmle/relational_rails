@@ -6,4 +6,13 @@ class AirlinesController < ApplicationController
   def show
     @airline = Airline.find(params[:id])
    end
+
+   def new
+   end
+
+   def create
+    @created_airline = Airline.create(name: params[:name], fleet_size: params[:fleet_size], is_mainline_passenger: params[:is_mainline_passenger])
+    redirect_to '/airlines'
+   end
+
 end
