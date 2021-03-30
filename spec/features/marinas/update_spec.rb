@@ -1,3 +1,4 @@
+require 'rails_helper'
 # User Story 12, Parent Update (x2)
 # As a visitor
 # When I visit a parent show page
@@ -9,3 +10,8 @@
 # Then a `PATCH` request is sent to '/parents/:id',
 # the parent's info is updated,
 # and I am redirected to the Parent's Show page where I see the parent's updated info
+
+
+RSpec.describe "Marina Update" do
+  describe 'As a visitor when '
+end

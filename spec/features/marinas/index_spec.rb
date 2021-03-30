@@ -2,18 +2,28 @@ require 'rails_helper'
 
 
 RSpec.describe "As a visitor" do
-#   User Story 5, Parent Children Index (x2)
-#
-# As a visitor
-# When I visit '/parents/:parent_id/child_table_name'
-# Then I see each Child that is associated with that Parent with each Child's attributes:
-
-
-  # User Story 6, Parent Index sorted by Most Recently Created (x2)
+  # User Story 1, Parent Index (x2)
+  # For each parent table
   # As a visitor
-  # When I visit the parent index,
-  # I see that records are ordered by most recently created first
-  # And next to each of the records I see when it was created
+  # When I visit '/parents'
+  # Then I see the name of each parent record in the system
+  describe "When I visit marinas path" do
+    it 'shows the name of each marina' do
+      tmh = Marina.create!(name: "Three Mile Harbor", city: "Springs", state: "GA", has_boat_ramp: true, low_tide_depth: 6, high_tide_depth: 10, created_at: "2020-03-27 17:37:52")
+      smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
+
+      visit '/marinas'
+
+      expect(page).to have_content(smbs.name)
+      expect(page).to have_content(smbs.created_at)
+      expect(page).to have_content(tmh.name)
+      expect(page).to have_content(tmh.created_at)
+    end
+  end
+
+
+
+#   User Story 5, Parent Children Index (x2)
   describe "When I visit the marina index" do
     it "orders marinas by recently created first and shows created_at" do
       smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
@@ -22,33 +32,13 @@ RSpec.describe "As a visitor" do
       visit '/marinas'
 
       # expect(page.body).to match(/smbs.*tmh/m)
-      expect(page).to have_content(smbs.name)
-      expect(page).to have_content(smbs.created_at)
-      expect(page).to have_content(tmh.name)
-      expect(page).to have_content(tmh.created_at)
     end
   end
 
-# User Story 7, Parent Child Count (x2)
-# As a visitor
-# When I visit a parent's show page
-# I see a count of the number of children associated with this parent
-  describe "When I vit the marina show page" do
-    it "displays the count of vessels at marina" do
-      smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
-      smbs.vessels.create!(name: 'Zinzi', make: 'Sabre', length_overall: 36, mast_up: true )
 
-      visit "/marinas/#{smbs.id}"
-
-      expect(page).to have_content(smbs.name)
-      expect(page).to have_content(smbs.vessels.count)
-    end
-  end
 
 #User Story 9, Parent Index Link
-# As a visitor
-# When I visit any page on the site
-# Then I see a link at the top of the page that takes me to the Parent Index
+
   describe "When I visit any page on the site" do
     it "has a link to the parent index" do
 

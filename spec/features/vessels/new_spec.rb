@@ -1,3 +1,4 @@
+require 'rails_helper'
 # User Story 13, Parent Child Creation (x2)
 #
 # As a visitor
