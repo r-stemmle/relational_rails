@@ -1,16 +1,15 @@
-<form action="/marinas/<%= @marina.id %>" method="patch">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <input type="hidden" name="_method" value="patch" />
-  <p>Edit</p>
-  <input type="text" name="marina[name]" value="<%= @marina.name %>" /><br>
-  <input name="marina[city]" value="<%= @marina.city %>" /><br>
-  <input type="text" name="marina[state]" value="<%= @marina.state %>"><br>
-  <label for="marina_has_boat_ramp">Boat Ramp?</label>
-  <select class="" name="marina[has_boat_ramp]">
-    <option value="false">false</option>
-    <option value="true">true</option>
-  </select><br>
-  <input type="number" name="marina[low_tide_depth]" value="<%= @marina.low_tide_depth %>"><br>
-  <input type="number" name="marina[high_tide_depth]" value="<%= @marina.high_tide_depth %>"><br>
-  <input type="submit" />
-</form>
+<%= form_with model: @marina do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br>
+  <%= form.label :city %>
+  <%= form.text_field :city %><br>
+  <%= form.label :state %>
+  <%= form.text_field :state %><br>
+  <%= form.label :has_boat_ramp, "Has Boat Ramp?" %>
+  <%= form.check_box :has_boat_ramp %><br>
+  <%= form.label :low_tide_depth %>
+  <%= form.number_field :low_tide_depth %><br>
+  <%= form.label :high_tide_depth %>
+  <%= form.number_field :high_tide_depth %><br>
+  <%= form.submit 'Submit' %>
+<% end %>

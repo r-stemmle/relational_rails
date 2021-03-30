@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   post '/marinas', to: 'marinas#create'
   post '/marinas/:id/vessels', to: 'vessels#create'
   get '/marinas/:id/edit', to: 'marinas#edit', as: 'edit_marina'
-  patch '/marinas/:id', to: 'marinas#update'
-  # get '/marinas/:id/vessels', to: 'marinas#show_vessels'
+  patch '/marinas/:id', to: 'marinas#update', as: 'marina'
   get '/marinas/:id/vessels', to: 'marinas#vessels', as: 'marinas_vessels'
 
   get '/vessels', to: 'vessels#index'

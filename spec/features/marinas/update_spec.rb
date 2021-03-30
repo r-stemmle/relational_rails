@@ -13,5 +13,15 @@ require 'rails_helper'
 
 
 RSpec.describe "Marina Update" do
-  describe 'As a visitor when '
+  describe 'As a visitor when I visit a marinas show page' do
+    it 'has a link to update the marina' do
+      smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
+
+      visit "/marinas/#{smbs.id}"
+
+      click_on 'Update Marina'
+
+      expect(current_path).to eq("/marinas/#{smbs.id}/edit")
+    end
+  end
 end
