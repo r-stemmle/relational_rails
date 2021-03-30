@@ -4,14 +4,16 @@
 <h1>Vessels</h1>
 
 <% @vessels.each do |vessel| %>
-
   <%= link_to "#{vessel.name}", controller: "vessels", action: "show", id:vessel %>
   <p>
     <%= vessel.make %> <%= vessel.length_overall %> with <%= vessel.mast_text %>,
     belonging to Marina # <%= vessel.marina_id %> --
-    Created at: <%= vessel.created_at %> and updated at: <%= vessel.updated_at %>
-
+    Created at: <%= vessel.created_at %> and updated at: <%= vessel.updated_at %><br>
   </p>
 <% end %>
 
-<h2><%= link_to "New Vessel", vessels_new_path %></h2>
+<% if @marina %>
+  <h2><%= link_to "New Vessel", vessels_new_path(id:@marina) %></h2>
+<% else %>
+  <h2><%= link_to "All Marinas", marinas_path %></h2>
+<% end %>

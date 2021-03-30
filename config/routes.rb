@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   get '/marinas/new', to: 'marinas#new'
   get '/marinas/:id', to: 'marinas#show'
   post '/marinas', to: 'marinas#create'
+  post '/marinas/:id/vessels', to: 'vessels#create'
   get '/marinas/:id/edit', to: 'marinas#edit', as: 'edit_marina'
-  put '/marinas/:id', to: 'marinas#update'
-  get '/marinas/:id/vessels', to: 'marinas#show_vessels'
+  patch '/marinas/:id', to: 'marinas#update'
+  # get '/marinas/:id/vessels', to: 'marinas#show_vessels'
+  get '/marinas/:id/vessels', to: 'marinas#vessels', as: 'marinas_vessels'
 
   get '/vessels', to: 'vessels#index'
   get '/vessels/new', to: 'vessels#new'
@@ -18,4 +20,5 @@ Rails.application.routes.draw do
 
   get '/pilots', to: 'pilots#index'
   get '/pilots/:id', to: 'pilots#show'
+
 end
