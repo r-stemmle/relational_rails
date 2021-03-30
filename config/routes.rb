@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   get '/vessels', to: 'vessels#index'
   get '/vessels/new', to: 'vessels#new'
-  get '/vessels/:id', to: 'vessels#show'
+  get '/vessels/:id', to: 'vessels#show', as: 'vessel_id'
+  get '/vessels/:id/edit', to: 'vessels#edit', as: 'edit_vessel'
+  patch '/vessels/:id', to: 'vessels#update', as: 'vessel'
   post '/vessels', to: 'vessels#create'
 
   get '/airlines', to: 'airlines#index'
