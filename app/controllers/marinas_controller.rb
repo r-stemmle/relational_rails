@@ -30,17 +30,16 @@ class MarinasController < ApplicationController
 
   def update
     marina = Marina.find(params[:id])
-    info = params[:marina]
-    marina.update({
-      name: info[:name],
-      city: info[:city],
-      state: info[:state],
-      has_boat_ramp: info[:has_boat_ramp],
-      low_tide_depth: info[:low_tide_depth],
-      high_tide_depth: info[:high_tide_depth]
-      })
-    marina.save
-    redirect_to "/marinas/#{marina.id}"
+    marina.update(
+      name:            params[:marina][:name],
+      city:            params[:marina][:city],
+      state:           params[:marina][:state],
+      has_boat_ramp:   params[:marina][:has_boat_ramp],
+      low_tide_depth:  params[:marina][:low_tide_depth],
+      high_tide_depth: params[:marina][:high_tide_depth]
+      )
+      marina.save
+      redirect_to "/marinas/#{marina.id}"
   end
 
   def destroy

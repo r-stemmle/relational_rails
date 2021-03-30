@@ -1,10 +1,6 @@
 require 'rails_helper'
-# User Story 2, Parent Show (x2)
-# As a visitor
-# When I visit '/parents/:id'
-# Then I see the parent with that id including the parent's attributes:
-# - data from each column that is on the parent table
 
+# User Story 2, Parent Show (x2)
 RSpec.describe "Parent Show" do
   describe "As a visitor when I visit a marina page" do
     it 'shows the marina and its attributes' do

@@ -1,15 +1,5 @@
 require 'rails_helper'
-# As a visitor
-# When I visit the marinas Index page
-# Then I see a link to create a new marina record, "New Marina"
-# When I click this link
-# Then I am taken to '/marina/new' where I  see a form for a new parent record
-# When I fill out the form with a new parent's attributes:
-# And I click the button "Create Marina" to submit the form
-# Then a `POST` request is sent to the '/parents' route,
-# a new parent record is created,
-# and I am redirected to the Marina Index page where I see the new Marina displayed.
-
+#US 11
 RSpec.describe 'New Marina' do
   describe 'As a visitor' do
     describe 'When I visit the new marina form by clicking a link on the index' do
