@@ -75,8 +75,7 @@ RSpec.describe 'Airline Update From Airline Index Page' do
       click_link 'Update Airline'
 
       expect(current_path).to eq("/airlines/#{alaska_airlines.id}/edit")
-
-      
+   
     end
   end
 end
