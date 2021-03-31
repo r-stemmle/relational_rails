@@ -1,0 +1,11 @@
+<%= form_with model: @vessel do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br>
+  <%= form.label :make %>
+  <%= form.text_field :make %><br>
+  <%= form.label :length_overall %>
+  <%= form.text_field :length_overall %><br>
+  <%= form.check_box :mast_up %>
+  <%= form.label :mast_up, "Boats mast is up?" %>
+  <%= form.submit 'Submit' %>
+<% end %>

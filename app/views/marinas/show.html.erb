@@ -1,11 +1,12 @@
 <%= link_to "All Marinas", marinas_path %>
 <%= link_to "All Vessels", vessels_path %>
 
-<h1><%= link_to "#{@marina.name}", controller: "marinas", action: "show_vessels", id: @marina.id %></h1>
+<h1><%= link_to @marina.name, marinas_vessels_path %></h1>
 
 <h2>Vessel Count:  <%= @marina.vessels.count %></h2>
 
 <p>Marina id: <%= @marina.id %></p>
+
 <p><%= @marina.city %>,
 <%= @marina.state %></p>
 <p>Has a boat ramp?  <%= @marina.has_boat_ramp %></p>
@@ -13,3 +14,4 @@
 <p>Depth at high tide:  <%= @marina.high_tide_depth %></p>
 <p>Created: <%= @marina.created_at %></p>
 <p>Updated: <%= @marina.updated_at %></p>
+<h5><%= link_to "Update Marina", edit_marina_path(@marina.id) %></h5>

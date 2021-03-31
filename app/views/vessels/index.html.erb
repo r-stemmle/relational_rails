@@ -1,15 +1,28 @@
 <%= link_to "All Marinas", marinas_path %>
 <%= link_to "All Vessels", vessels_path %>
 
-<h1>Vessels</h1>
+<h3>================Vessels==============</h3>
 
 <% @vessels.each do |vessel| %>
-
-  <%= link_to "#{vessel.name}", controller: "vessels", action: "show", id:vessel %>
+  <h1><%= link_to "#{vessel.name}", controller: "vessels", action: "show", id:vessel %></h1>
+  <%= link_to "Edit #{vessel.id}", controller: "vessels", action: "edit", id:vessel %>
   <p>
     <%= vessel.make %> <%= vessel.length_overall %> with <%= vessel.mast_text %>,
     belonging to Marina # <%= vessel.marina_id %> --
-    Created at: <%= vessel.created_at %> and updated at: <%= vessel.updated_at %>
-
+    Created at: <%= vessel.created_at %> and updated at: <%= vessel.updated_at %><br>
   </p>
+<% end %>
+
+
+
+<% if @marina %>
+  <h4><%= link_to "Sort", sorted_vessels_path %></h4>
+<% else %>
+  <p>End of Records!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+<% end %>
+
+<% if @marina %>
+  <h2><%= link_to "New Vessel", vessels_new_path(id:@marina) %></h2>
+<% else %>
+  <h2><%= link_to "All Marinas", marinas_path %></h2>
 <% end %>
