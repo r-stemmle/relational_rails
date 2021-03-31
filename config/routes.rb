@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/marinas/:id/vessels', to: 'vessels#create'
   get '/marinas/:id/edit', to: 'marinas#edit', as: 'edit_marina'
   patch '/marinas/:id', to: 'marinas#update', as: 'marina'
+  delete '/marinas/:id', to: 'marinas#destroy', as: 'delete_marina'
   get '/marinas/:id/vessels', to: 'marinas#vessels', as: 'marinas_vessels'
   #ask about this route \/\/\/\/
   get '/marinas/:id/vessels_sorted', to: 'marinas#sorted_vessels', as: 'sorted_vessels'
