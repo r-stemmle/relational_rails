@@ -11,6 +11,7 @@
     belonging to Marina # <%= vessel.marina_id %> --
     Created at: <%= vessel.created_at %> and updated at: <%= vessel.updated_at %><br>
   </p>
+  <h6> <%= link_to "Delete Vessel", delete_vessel_path(vessel.id), method: :delete %> </h6>
 <% end %>
 
 

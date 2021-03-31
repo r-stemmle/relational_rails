@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/vessels/:id', to: 'vessels#show', as: 'vessel_id'
   get '/vessels/:id/edit', to: 'vessels#edit', as: 'edit_vessel'
   patch '/vessels/:id', to: 'vessels#update', as: 'vessel'
+  delete 'vessels/:id', to: 'vessels#destroy', as: 'delete_vessel'
   post '/vessels', to: 'vessels#create'
 
   get '/airlines/new', to: 'airlines#new'

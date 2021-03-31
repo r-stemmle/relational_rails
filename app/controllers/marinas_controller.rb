@@ -43,7 +43,6 @@ class MarinasController < ApplicationController
   end
 
   def destroy
-    # binding.pry
     Marina.find(params[:id]).destroy
     redirect_to '/marinas'
   end
