@@ -1,6 +1,6 @@
 class VesselsController < ApplicationController
   def index
-    @vessels = Vessel.all
+    @vessels = Vessel.mast_up
   end
 
   def new
