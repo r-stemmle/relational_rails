@@ -42,10 +42,6 @@ RSpec.describe "As a visitor" do
   end
 
 # As a visitor 17
-# When I visit the parent index page
-# Next to every parent, I see a link to edit that parent's info
-# When I click the link
-# I should be taken to that parents edit
   describe 'When I visit the Marinas index page' do
     it "I see a link to edit that marinas info and I can click it to edit" do
       smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
