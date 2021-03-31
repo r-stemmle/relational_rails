@@ -9,7 +9,6 @@ RSpec.describe 'Update Airline' do
       visit "/airlines/#{alaska_airlines.id}"
 
       click_link 'Update Airline'
-      save_and_open_page
       expect(current_path).to eq("/airlines/#{alaska_airlines.id}/edit")
       fill_in 'Name', with: 'Theresa Cargo Carrier'
       click_on 'Update Airline'
@@ -19,3 +18,4 @@ RSpec.describe 'Update Airline' do
     end
   end
 end
+
