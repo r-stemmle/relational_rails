@@ -51,4 +51,10 @@ class MarinasController < ApplicationController
     @vessels = @marina.vessels
     render template: 'vessels/index'
   end
+
+  def sorted_vessels
+    @marina = Marina.find(params[:id])
+    @vessels = @marina.vessels.sorted
+    render template: 'vessels/index'
+  end
 end

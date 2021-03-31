@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/marinas/:id/edit', to: 'marinas#edit', as: 'edit_marina'
   patch '/marinas/:id', to: 'marinas#update', as: 'marina'
   get '/marinas/:id/vessels', to: 'marinas#vessels', as: 'marinas_vessels'
+  get '/marinas/:id/vessels_sorted', to: 'marinas#sorted_vessels', as: 'sorted_vessels'
 
   get '/vessels', to: 'vessels#index'
   get '/vessels/new', to: 'vessels#new'

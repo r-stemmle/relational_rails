@@ -44,7 +44,36 @@ RSpec.describe "As a visitor" do
       # binding.pry
     end
   end
-  # As a visitor
-  # When I visit the child index
-  # Then I only see records where the boolean column is `true`
+
+  describe "When I visit the marinas vessels index page" do
+    it "I see a link to sort vessels in alphabetical order" do
+      smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
+      smbs.vessels.create!(
+          name: 'Zinzi',
+          make: 'Sabre',
+          length_overall: 36,
+          mast_up: true
+      )
+      smbs.vessels.create!(
+          name: 'Shorty',
+          make: 'Viking',
+          length_overall: 34,
+          mast_up: false
+      )
+
+      visit "/marinas/#{smbs.id}/vessels"
+      # When I click on the link
+      click_on "Sort"
+      # I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
+
+      expect(current_path).to eq("/marinas/#{smbs.id}/vessels_sorted")
+      expect(page).to have_content('Shorty')
+      expect(page).to have_content('Zinzi')
+    end
+  end
+# User Story 16, Sort Parent's Children in Alphabetical Order by name (x2)
+# As a visitor
+# When I visit the Parent's children Index Page
+# Then I see a link to sort children in alphabetical order
+
 end

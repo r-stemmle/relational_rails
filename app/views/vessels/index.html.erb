@@ -17,3 +17,9 @@
 <% else %>
   <h2><%= link_to "All Marinas", marinas_path %></h2>
 <% end %>
+
+<% if @marina %>
+  <p><%= link_to "Sort", sorted_vessels_path %></p>
+<% else %>
+  <p>End of Records!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+<% end %>

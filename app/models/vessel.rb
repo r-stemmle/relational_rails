@@ -5,6 +5,10 @@ class Vessel < ApplicationRecord
     where(mast_up: true)
   end
 
+  def self.sorted
+    order(:name)
+  end
+
   def mast_text
     if self.mast_up
       "Mast up"
