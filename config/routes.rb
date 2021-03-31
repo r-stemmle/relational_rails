@@ -18,11 +18,13 @@ Rails.application.routes.draw do
   patch '/vessels/:id', to: 'vessels#update', as: 'vessel'
   post '/vessels', to: 'vessels#create'
 
+  get '/airlines/:id/edit', to: 'airlines#edit'
   get '/airlines/new', to: 'airlines#new'
   get '/airlines', to: 'airlines#index'
   get '/airlines/:id', to: 'airlines#show'
   get '/airlines/:airline_id/pilots', to: 'airline/pilots#index'
   post '/airlines', to: 'airlines#create'
+  patch '/airlines/:id', to: 'airlines#update'
   # get '/airlines/:airline_id/pilots/:id', to: 'airlines/pilots#show'
 
   get '/pilots', to: 'pilots#index'
