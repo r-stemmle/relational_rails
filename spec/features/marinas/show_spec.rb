@@ -30,4 +30,15 @@ RSpec.describe "Parent Show" do
         expect(page).to have_content(smbs.vessels.count)
       end
     end
+
+  # User Story 10, Parent Child Index Link
+    describe "When I visit a marina show page" do
+      it "has a link to take me to that marinas vessels page" do
+        smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
+
+        visit "/marinas/#{smbs.id}"
+
+        expect(page).to have_link("St. Marys Boat Services")
+      end
+    end
 end

@@ -17,8 +17,6 @@ RSpec.describe "As a visitor" do
     end
   end
 
-
-
 #   User Story 5, Parent Children Index (x2)
   describe "When I visit the marina index" do
     it "orders marinas by recently created first and shows created_at" do
@@ -34,10 +32,7 @@ RSpec.describe "As a visitor" do
     end
   end
 
-
-
 #User Story 8 and 9, Parent/child Index Link
-
   describe "When I visit any page on the site" do
     it "has a link to the parent index" do
       visit "/marinas"
@@ -46,17 +41,21 @@ RSpec.describe "As a visitor" do
     end
   end
 
-# User Story 10, Parent Child Index Link
-# As a visitor
-# When I visit a parent show page ('/parents/:id')
-# Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
-  describe "When I visit a marina show page" do
-    it "has a link to take me to that marinas vessels page" do
+# As a visitor 17
+# When I visit the parent index page
+# Next to every parent, I see a link to edit that parent's info
+# When I click the link
+# I should be taken to that parents edit
+  describe 'When I visit the Marinas index page' do
+    it "I see a link to edit that marinas info and I can click it to edit" do
       smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
+      tmh = Marina.create!(name: "Three Mile Harbor", city: "Springs", state: "GA", has_boat_ramp: true, low_tide_depth: 6, high_tide_depth: 10, created_at: "2020-03-27 17:37:52")
 
-      visit "/marinas/#{smbs.id}"
+      visit '/marinas'
 
-      expect(page).to have_link("St. Marys Boat Services")
+      click_on "Edit #{smbs.id}"
+
+      expect(current_path).to eq("/marinas/#{smbs.id}/edit")
     end
   end
 
