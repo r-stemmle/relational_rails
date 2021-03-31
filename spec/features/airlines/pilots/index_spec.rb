@@ -57,3 +57,15 @@ RSpec.describe 'airline story 5: pilot attributes shown at parent id', type: :fe
 
   end
 end
+
+RSpec.describe 'Airline Story 13: Parent Child Creation', type: :feature do
+  it 'can create and add a new pilot to a specific airline' do
+    alaska_airlines = Airline.create!(name: 'Alaska Airlines',
+                                  fleet_size: 83,
+                                  is_mainline_passenger: true)
+    
+    visit "/airlines/#{alaska_airlines.id}/pilots"
+    expect(page).to have_selector(:link_or_button, 'Create Pilot')
+  
+  end
+end

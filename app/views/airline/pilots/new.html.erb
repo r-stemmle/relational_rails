@@ -1,0 +1,11 @@
+<h1>New Pilot Form</h1>
+
+<%= form_with url: "/airlines/#{@airline.id}/pilots", method: :post, local: true do |form| %>
+  <%= form.label :name%>
+  <%= form.text_field :name%>
+  <%= form.label :is_captain%>
+  <%= form.text_field :is_captain%>
+  <%= form.label :years_experience%>
+  <%= form.text_field :years_experience%>
+  <%= form.submit 'Create Pilot'%>
+<%end%>
