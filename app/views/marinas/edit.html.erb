@@ -1,0 +1,15 @@
+<%= form_with model: @marina do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br>
+  <%= form.label :city %>
+  <%= form.text_field :city %><br>
+  <%= form.label :state %>
+  <%= form.text_field :state %><br>
+  <%= form.label :has_boat_ramp, "Has Boat Ramp?" %>
+  <%= form.check_box :has_boat_ramp %><br>
+  <%= form.label :low_tide_depth %>
+  <%= form.number_field :low_tide_depth %><br>
+  <%= form.label :high_tide_depth %>
+  <%= form.number_field :high_tide_depth %><br>
+  <%= form.submit 'Submit' %>
+<% end %>
