@@ -6,4 +6,4 @@
   <h2>Record Was Created At: <%=@airline.created_at.strftime("%m/%d/%Y %I:%M %p")%></h2>
   <h2>Record Was Last Updated At: <%=@airline.updated_at.strftime("%m/%d/%Y %I:%M %p")%></h2>
   <h2>Total Number Of <%= link_to "#{@airline.name}", "/airlines/#{@airline.id}/pilots"%> Pilots: <%=@airline.pilots.count%></h2>
-  
+  <%= link_to "Update Airline",  "/airlines/#{@airline.id}/edit"%> 
