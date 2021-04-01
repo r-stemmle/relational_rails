@@ -47,11 +47,16 @@ class MarinasController < ApplicationController
     redirect_to '/marinas'
   end
 
-
   def vessels
-    @marina = Marina.find(params[:id])
-    @vessels = @marina.vessels
-    render template: 'vessels/index'
+    if params[:length_overall]
+      @marina = Marina.find(params[:id])
+      @vessels = @marina.vessels.greater_than_length(params[:length_overall])
+      render template: 'vessels/index'
+    else
+      @marina = Marina.find(params[:id])
+      @vessels = @marina.vessels
+      render template: 'vessels/index'
+    end
   end
 
   def sorted_vessels

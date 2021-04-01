@@ -1,6 +1,10 @@
 class Vessel < ApplicationRecord
   belongs_to :marina
 
+  def self.greater_than_length(number)
+    where("length_overall > ?", number.to_i)
+  end
+
   def self.mast_up
     where(mast_up: true)
   end

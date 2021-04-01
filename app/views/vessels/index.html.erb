@@ -17,13 +17,19 @@
 
 
 <% if @marina %>
-  <h4><%= link_to "Sort", sorted_vessels_path %></h4>
+  <p>
+    <%= form_with url: marinas_vessels_path, method: :get, local: true do |f| %>
+      <%= f.label :length_overall, "Only show vessels with length greater than" %>:
+      <%= f.number_field :length_overall %><br>
+      <%= f.submit %>
+    <% end %>
+  </p>
+
+  <h2><%= link_to "Sort", sorted_vessels_path %></h2>
+
+  <h2><%= link_to "New Vessel", vessels_new_path(id:@marina) %></h2>
+
+
 <% else %>
   <p>End of Records!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
-<% end %>
-
-<% if @marina %>
-  <h2><%= link_to "New Vessel", vessels_new_path(id:@marina) %></h2>
-<% else %>
-  <h2><%= link_to "All Marinas", marinas_path %></h2>
 <% end %>
