@@ -9,7 +9,6 @@ RSpec.describe "As a visitor" do
       smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
 
       visit '/marinas'
-
       expect(page).to have_content(smbs.name)
       expect(page).to have_content(smbs.created_at)
       expect(page).to have_content(tmh.name)
@@ -24,7 +23,6 @@ RSpec.describe "As a visitor" do
       tmh = Marina.create!(name: "Three Mile Harbor", city: "Springs", state: "GA", has_boat_ramp: true, low_tide_depth: 6, high_tide_depth: 10, created_at: "2020-03-27 17:37:52")
 
       visit '/marinas'
-
       expect(page).to have_content(smbs.name)
       expect(page).to have_content(smbs.created_at)
       expect(page).to have_content(tmh.name)
@@ -36,8 +34,8 @@ RSpec.describe "As a visitor" do
   describe "When I visit any page on the site" do
     it "has a link to the parent index" do
       visit "/marinas"
-      expect(page).to have_link('All Vessels')
-      expect(page).to have_link('All Marinas')
+      expect(page).to have_link('Vessels')
+      expect(page).to have_link('Marinas')
     end
   end
 
@@ -48,9 +46,7 @@ RSpec.describe "As a visitor" do
       tmh = Marina.create!(name: "Three Mile Harbor", city: "Springs", state: "GA", has_boat_ramp: true, low_tide_depth: 6, high_tide_depth: 10, created_at: "2020-03-27 17:37:52")
 
       visit '/marinas'
-
       click_on "Edit #{smbs.id}"
-
       expect(current_path).to eq("/marinas/#{smbs.id}/edit")
     end
   end

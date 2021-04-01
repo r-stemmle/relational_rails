@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   patch '/marinas/:id', to: 'marinas#update', as: 'marina'
   delete '/marinas/:id', to: 'marinas#destroy', as: 'delete_marina'
   get '/marinas/:id/vessels', to: 'marinas#vessels', as: 'marinas_vessels'
-  #ask about this route \/\/\/\/
   get '/marinas/:id/vessels_sorted', to: 'marinas#sorted_vessels', as: 'sorted_vessels'
 
   get '/vessels', to: 'vessels#index'
