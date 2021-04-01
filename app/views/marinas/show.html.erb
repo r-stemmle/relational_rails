@@ -1,5 +1,3 @@
-<%= link_to "All Marinas", marinas_path %>
-<%= link_to "All Vessels", vessels_path %>
 
 <h1><%= link_to @marina.name, marinas_vessels_path %></h1>
 
@@ -15,3 +13,4 @@
 <p>Created: <%= @marina.created_at %></p>
 <p>Updated: <%= @marina.updated_at %></p>
 <h5><%= link_to "Update Marina", edit_marina_path(@marina.id) %></h5>
+<h5><%= link_to "Delete Marina", delete_marina_path(@marina.id), method: :delete %></h5>

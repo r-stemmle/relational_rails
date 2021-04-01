@@ -48,4 +48,23 @@ RSpec.describe "Class Methods" do
     end
   end
 
+  describe "display vessels" do
+    it "where length overall is greater than a number" do
+      smbs = Marina.create!(name: "St. Marys Boat Services", city: "St. Marys", state: "GA", has_boat_ramp: false, low_tide_depth: 3, high_tide_depth: 9, created_at: "2021-03-27 17:37:52")
+      zinzi = smbs.vessels.create!(
+          name: 'Zinzi',
+          make: 'Sabre',
+          length_overall: 36,
+          mast_up: true
+      )
+      shorty = smbs.vessels.create!(
+          name: 'Shorty',
+          make: 'Viking',
+          length_overall: 34,
+          mast_up: false
+      )
+      expect(smbs.vessels.greater_than_length("35")).to eq([zinzi])
+    end
+  end
+
 end

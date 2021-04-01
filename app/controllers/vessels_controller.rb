@@ -31,6 +31,11 @@ class VesselsController < ApplicationController
     redirect_to vessel_id_path
   end
 
+  def destroy
+    Vessel.find(params[:id]).destroy
+    redirect_to '/vessels'
+  end
+
   def edit
     @vessel = Vessel.find(params[:id])
   end

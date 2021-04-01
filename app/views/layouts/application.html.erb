@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <%= link_to "Pilots", "/pilots" %>
-    <%= link_to "Airlines", "/airlines" %>
+    <%= link_to "Pilots", "pilots" %>
+    <%= link_to "Airlines", "airlines" %>
+    <%= link_to "Marinas", marinas_path %>
+    <%= link_to "Vessels", vessels_path %>
     <%= yield %>
   </body>
 </html>

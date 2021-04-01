@@ -1,5 +1,3 @@
-<%= link_to "All Marinas", marinas_path %>
-<%= link_to "All Vessels", vessels_path %>
 
 <h1><%= @vessel.name %></h1>
 
@@ -11,3 +9,5 @@
 <p>Mast:  <%= @vessel.mast_text %></p>
 
 <h2><%= link_to 'Update Vessel', edit_vessel_path %></h2>
+
+<h5><%= link_to "Delete Vessel", delete_vessel_path(@vessel.id), method: :delete %></h5>

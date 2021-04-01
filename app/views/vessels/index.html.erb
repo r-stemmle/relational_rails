@@ -1,5 +1,4 @@
-<%= link_to "All Marinas", marinas_path %>
-<%= link_to "All Vessels", vessels_path %>
+
 
 <h3>================Vessels==============</h3>
 
@@ -11,18 +10,24 @@
     belonging to Marina # <%= vessel.marina_id %> --
     Created at: <%= vessel.created_at %> and updated at: <%= vessel.updated_at %><br>
   </p>
+  <h6> <%= link_to "Delete Vessel", delete_vessel_path(vessel.id), method: :delete %> </h6>
 <% end %>
 
 
 
 <% if @marina %>
-  <h4><%= link_to "Sort", sorted_vessels_path %></h4>
-<% else %>
-  <p>End of Records!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
-<% end %>
+  <p>
+    <%= form_with url: marinas_vessels_path, method: :get, local: true do |f| %>
+      <%= f.label :length_overall, "Only show vessels with length greater than" %>:
+      <%= f.number_field :length_overall %><br>
+      <%= f.submit %>
+    <% end %>
+  </p>
 
-<% if @marina %>
+  <h2><%= link_to "Sort", sorted_vessels_path %></h2>
+
   <h2><%= link_to "New Vessel", vessels_new_path(id:@marina) %></h2>
+
 <% else %>
-  <h2><%= link_to "All Marinas", marinas_path %></h2>
+  <p>End of Records With Mast Up, Please Go To Marina Pages to see all Vessels!</p>
 <% end %>
