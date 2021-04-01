@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'New Pilot' do
-  describe 'user story 11: create new pilot' do
-    it 'can create a new pilot from form' do
+RSpec.describe 'New Airline' do
+  describe 'user story 11: create new airline' do
+    it 'can create a new airline from form' do
       visit '/airlines'
 
       click_link 'New Airline'
