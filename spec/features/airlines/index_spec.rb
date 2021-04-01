@@ -63,3 +63,21 @@ RSpec.describe 'airline story 2: parent show', type: :feature do
   end
 end
 
+RSpec.describe 'Airline Update From Airline Index Page' do
+  describe 'airline story 17' do
+    it 'can update airline from index page' do
+      alaska_airlines = Airline.create!(name: 'Alaska Airlines',
+                                    fleet_size: 83,
+                                    is_mainline_passenger: true
+                                    )
+      visit '/airlines'
+
+      click_link 'Update Airline'
+
+      expect(current_path).to eq("/airlines/#{alaska_airlines.id}/edit")
+   
+    end
+  end
+end
+
+

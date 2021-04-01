@@ -15,4 +15,13 @@ class AirlinesController < ApplicationController
     redirect_to '/airlines'
    end
 
+   def edit
+    @airline = Airline.find(params[:id])
+   end
+
+   def update
+    @airline = Airline.find(params[:id])
+    @airline.update(name: params[:name], fleet_size: params[:fleet_size], is_mainline_passenger: params[:is_mainline_passenger])
+    redirect_to "/airlines/#{@airline.id}"
+   end
 end

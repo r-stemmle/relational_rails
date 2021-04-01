@@ -1,7 +1,7 @@
 <h1>Airlines</h1>
 
 <% @airlines.each do |airline| %>
-  <h2>Airline Name:<%=airline.name%>, Created At:<%=airline.created_at.strftime("%m/%d/%Y %I:%M %p")%> </h2>
-<% end %>
+  <h2>Airline Name:<%=airline.name%>, Created At:<%=airline.created_at.strftime("%m/%d/%Y %I:%M %p")%> <%= link_to "Update Airline",  "/airlines/#{airline.id}/edit"%> </h2>
+  <% end %>
 
 <%= link_to 'New Airline', '/airlines/new'%>
